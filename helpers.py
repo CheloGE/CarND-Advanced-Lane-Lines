@@ -474,3 +474,41 @@ def measure_curvature(y_eval, left_poly_coeffs, right_poly_coeffs):
     right_R = ((1 + (2*right_A*y_eval + right_B)**2)**1.5) / np.absolute(2*right_A)
     
     return left_R, right_R
+
+def drawLanePoly(img, left_poly_coeffs, right_poly_coeffs, inv_Matrix):
+    """
+        Draw the area of the lane on the `img` of the road using the poly `left_poly_coeffs` and `right_poly_coeffs`.
+    """
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    yMax = img.shape[0]
+    ploty = np.linspace(0, yMax - 1, yMax)
+    # Creating a blank image to draw into
+    out_img = np.zeros_like(img).astype(np.uint8)
+
+    # Extracting coefficients
+    left_A = left_poly_coeffs[0]
+    left_B = left_poly_coeffs[1]
+    left_C = left_poly_coeffs[2]
+    
+    right_A = right_poly_coeffs[0]
+    right_B = right_poly_coeffs[1]
+    right_C = right_poly_coeffs[2]
+    
+    # Creating y-axis
+    y = np.array(list(range(img.shape[0])))
+
+    # Calculate points.
+    left_fitX = left_A*y**2 + left_B*y + left_C
+    right_fitX = right_A*y**2 + right_B*y + right_C
+
+    # Recast the x and y points into usable format for cv2.fillPoly()
+    left_line_pts = np.array([np.transpose(np.vstack([left_fitX, y]))])
+    right_line_pts = np.array([np.flipud(np.transpose(np.vstack([right_fitX, y])))])
+    pts = np.hstack((left_line_pts, right_line_pts))
+    
+    # Draw the polygon onto the warped blank image. We use a green color (0,255,0)
+    cv2.fillPoly(out_img, np.int_([pts]), (0,255, 0))
+    
+    # Warp the blank back to original image space using inverse perspective matrix (Minv)
+    newwarp = cv2.warpPerspective(out_img, inv_Matrix, (img.shape[1], img.shape[0])) 
+    return cv2.addWeighted(img, 1, newwarp, 0.3, 0)
