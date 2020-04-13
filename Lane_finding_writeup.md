@@ -77,6 +77,7 @@ In this section we follow the below steps:
 ![](Documentation_images/figure7.JPG)
 
 Another example but with the thersholded binary image is shown below:
+
 ![](Documentation_images/figure9.JPG)
 
    * Of course in the image above we first got the perspective transform matrix as well as the inverse perspective transform matrix. Later we use the inverse matrix to provide a way to go back to the original image perspective as shown below:
@@ -91,10 +92,13 @@ In this section we follow the below steps:
 
   * Use histogram peaks technique to identify initial points on the line
   * We propagate this initial points obtained with the help of the sliding window technique as shown below:
+  
   ![](Documentation_images/figure10.JPG)
   * Then we fit the points inside the windows with a polynomial of 2nd order as shown below:
+  
   ![](Documentation_images/figure11.JPG)
   * We also implement a function to detect the following frames based on previous polynomial coefficients as shown below:
+  
   ![](Documentation_images/figure12.JPG)
   Nevertheless, This last function was not implemented in the final pipeline. It is leaved here for optimizing the algorithm in future work.
   
@@ -104,8 +108,10 @@ This part of the code has also been implemented in the "./Line Detection Pipelin
 
 In this section we follow the below steps:
   * With the help of the fitted polynomial the radius of curvature was obtained throught the following equation:
+  
   ![](Documentation_images/figure13.JPG)
   * The polynomial was fitted again however it was done based on a conversion from pixels to real-world measurements. In other words, the polynomial was fed with values that are in meters instead of pixels. The algorithm was tested on all the testing images obtaining the following results:
+  
 ![](Documentation_images/figure14.JPG)
 
 ### 7. Warp the detected lane boundaries back onto the original image and compute the vehicle's position with respect to the center of the lane. Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
@@ -114,8 +120,10 @@ This part of the code has also been implemented in the "./Line Detection Pipelin
 
 In this section we follow the below steps:
   * Use the fitted polynomial and the inverse matrix obtained in section 4 to convert back to the original perspective and draw a green polygon on the original image. as shown below:
+  
   ![](Documentation_images/figure15.JPG)
   * Calculate the vehicle's position related to the center of the lane. We then output the results on the original image together with the green polygon obtained in the step above.
+  
   ![](Documentation_images/figure16.JPG)
 
 
