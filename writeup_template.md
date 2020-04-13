@@ -38,7 +38,10 @@ Then a function was created to get the object points (3D) and the image points (
 ![](Documentation_images/figure2.JPG)
 
 * Once the object and image points were taken, a camera matrix and its distortion coefficients were obtained. 
-* Then these two parameteres were used to undistord all future images taken by this camera. To show a brief example of the undistortion, please see the below image:
+
+#### 2. Apply a distortion correction to raw images.
+
+* Then the camera matrix and distortion coefficients were used to undistord all future images taken by this camera. To show a brief example of the undistortion, please see the below image:
 
 ![](Documentation_images/figure3.JPG)
 
@@ -46,9 +49,19 @@ Below you can also find another undistortion image. This time from the camera mo
 
 ![](Documentation_images/figure4.JPG)
 
+#### 3. Use color transforms, gradients, to create a thresholded binary image.
 
+This part of the code has also been implemented in the "./examples/Line Detection Pipeline.ipynb" notebook. 
 
+The pipeline in this section was as follows:
 
+    * Convert to HLS color space and take the saturation channel. Even though the function here was implemented with the capability to threshold the values in saturation, for this project it was not used. In other words, the whole saturation channel was extracted intact.  
+    * Create two functions that were created based on the sobel gradient. They are the magnitude and orientation of the gradient. In this case it was thresholded in the range of (20, 150) for the magnitude and in the range of (0.7, 1.3) for the orientation of the gradient.
+    * Input the saturation channel in 1st step and combine all the gradient thresholds to get a binary image, as shown below for one of the test images:
+    
+![](Documentation_images/figure5.JPG)    
+    
+    
 
 
 
