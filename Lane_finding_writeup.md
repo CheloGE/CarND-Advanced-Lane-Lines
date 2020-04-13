@@ -81,9 +81,9 @@ This resulted in the following source and destination points:
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
 | 585, 455      | 250, 0        | 
-| 705, 455      | 1200, 0       |
+| 705, 455      | 1000, 0       |
 | 190, 720      | 250, 720      |
-| 1130, 720     | 1200, 720     |
+| 1130, 720     | 1000, 720     |
 
 Another example but with the thersholded binary image is shown below:
 
