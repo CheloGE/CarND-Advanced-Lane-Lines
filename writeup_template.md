@@ -29,9 +29,15 @@ The goals / steps of this project are the following:
 
 The code for this step is contained in the first 5 code cells of the IPython notebook located in "./examples/Line Detection Pipeline.ipynb"
 
-To calibr
+To calibrate the camera a chessboard was used. The chessboard had 9 x 6 inner corners, as shown below:
 
 ![](Documentation_images/figure1.JPG)
+
+Then a function was created to get the object points (3D) and the image points (2D). To visualize the output of this part a pandas dataframe was implemented as shown below for one of the chessboard images:
+
+![](Documentation_images/figure2.JPG)
+
+
 
 ### Pipeline (single images)
 
