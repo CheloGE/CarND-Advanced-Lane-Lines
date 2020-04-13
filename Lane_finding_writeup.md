@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 
 ### Camera Calibration
 
-#### 1. Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
+### 1. Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 
 The code for this step is contained in the first 5 code cells of the IPython notebook located in "./Line Detection Pipeline.ipynb"
 
@@ -39,7 +39,7 @@ Then a function was created to get the object points (3D) and the image points (
 
 * Once the object and image points were taken, a camera matrix and its distortion coefficients were obtained. 
 
-#### 2. Apply a distortion correction to raw images.
+### 2. Apply a distortion correction to raw images.
 
 * Then the camera matrix and distortion coefficients were used to undistord all future images taken by this camera. To show a brief example of the undistortion, please see the below image:
 
@@ -49,7 +49,7 @@ Below you can also find another undistortion image. This time from the camera mo
 
 ![](Documentation_images/figure4.JPG)
 
-#### 3. Use color transforms, gradients, to create a thresholded binary image.
+### 3. Use color transforms, gradients, to create a thresholded binary image.
 
 This part of the code has also been implemented in the "./Line Detection Pipeline.ipynb" notebook. 
 
@@ -61,7 +61,7 @@ The pipeline in this section was as follows:
     
 ![](Documentation_images/figure5.JPG)    
     
-#### 4. Apply a perspective transform to rectify binary image ("birds-eye view").
+### 4. Apply a perspective transform to rectify binary image ("birds-eye view").
 
 This part of the code has also been implemented in the "./Line Detection Pipeline.ipynb" notebook. 
 
@@ -83,7 +83,7 @@ Another example but with the thersholded binary image is shown below:
     
 ![](Documentation_images/figure8.JPG)    
 
-#### 5. Detect lane pixels and fit to find the lane boundary.
+### 5. Detect lane pixels and fit to find the lane boundary.
 
 This part of the code has also been implemented in the "./Line Detection Pipeline.ipynb" notebook. However, a lot of helper functions were used, which are located at "./helpers.py" file  
 
@@ -98,11 +98,15 @@ In this section we follow the below steps:
   ![](Documentation_images/figure12.JPG)
   Nevertheless, This last function was not implemented in the final pipeline. It is leaved here for optimizing the algorithm in future work.
   
+### 6. Determine the curvature of the lane in pixels and meters
 
+This part of the code has also been implemented in the "./Line Detection Pipeline.ipynb" notebook. However, a lot of helper functions were used, which are located at "./helpers.py" file  
 
-
-
-
+In this section we follow the below steps:
+  * With the help of the fitted polynomial the radius of curvature was obtained throught the following equation:
+  ![](Documentation_images/figure13.JPG)
+  * The polynomial was fitted again however it was done based on a conversion from pixels to real-world measurements. In other words, the polynomial was fed with values that are in meters instead of pixels. The algorithm was tested on all the testing images obtaining the following results:
+![](Documentation_images/figure14.JPG)
 
 
 
