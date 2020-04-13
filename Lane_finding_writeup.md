@@ -135,4 +135,6 @@ In this section we follow the below steps:
   
   ![](Documentation_images/figure16.JPG)
 
+### 7. Video pipeline
 
+The resulted video was uploaded to the following location: [video address](https://youtu.be/6zJiRspWwNU)
