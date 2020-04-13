@@ -37,7 +37,10 @@ Then a function was created to get the object points (3D) and the image points (
 
 ![](Documentation_images/figure2.JPG)
 
+* Once the object and image points were taken, a camera matrix and its distortion coefficients were obtained. 
+* Then these two parameteres were used to undistord all future images taken by this camera. To show a brief example of the undistortion, please see the below image:
 
+![](Documentation_images/figure3.JPG)
 
 ### Pipeline (single images)
 
