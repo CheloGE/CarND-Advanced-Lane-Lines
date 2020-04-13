@@ -108,10 +108,15 @@ In this section we follow the below steps:
   * The polynomial was fitted again however it was done based on a conversion from pixels to real-world measurements. In other words, the polynomial was fed with values that are in meters instead of pixels. The algorithm was tested on all the testing images obtaining the following results:
 ![](Documentation_images/figure14.JPG)
 
+### 7. Warp the detected lane boundaries back onto the original image and compute the vehicle's position with respect to the center of the lane. Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
+This part of the code has also been implemented in the "./Line Detection Pipeline.ipynb" notebook. However, a lot of helper functions were used, which are located at "./helpers.py" file 
 
-
-
+In this section we follow the below steps:
+  * Use the fitted polynomial and the inverse matrix obtained in section 4 to convert back to the original perspective and draw a green polygon on the original image. as shown below:
+  ![](Documentation_images/figure15.JPG)
+  * Calculate the vehicle's position related to the center of the lane. We then output the results on the original image together with the green polygon obtained in the step above.
+  ![](Documentation_images/figure16.JPG)
 
 
 
