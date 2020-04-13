@@ -1,5 +1,5 @@
 ## Advanced Lane Lines Finding
-
+**Author: Marcelo Garcia**
 ### The aim of this project is to create a pipeline that detect the lane lines on the road.
 
 ---
