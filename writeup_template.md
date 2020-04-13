@@ -31,7 +31,7 @@ The code for this step is contained in the first 5 code cells of the IPython not
 
 To calibr
 
-[](https://github.com/CheloGE/CarND-Advanced-Lane-Lines/tree/master/Documentation_images/figure1.JPG)
+![](https://github.com/CheloGE/CarND-Advanced-Lane-Lines/tree/master/Documentation_images/figure1.JPG)
 
 ### Pipeline (single images)
 
