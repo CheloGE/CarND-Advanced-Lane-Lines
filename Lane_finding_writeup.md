@@ -18,6 +18,8 @@ The goals / steps of this project are the following:
 * Determine the curvature of the lane and vehicle position with respect to center.
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
+* Video pipeline
+* Discussion
 
 ### Below I will explain and describe how I addressed each point in the outline.  
 
@@ -138,3 +140,8 @@ In this section we follow the below steps:
 ### 7. Video pipeline
 
 The resulted video was uploaded to the following location: [video address](https://youtu.be/6zJiRspWwNU)
+
+### 8. Discussion
+
+* The short-term future work for this project will be to optimize the algorithm since now it takes some time to compute and find the lines. A function was already implemented for this. However, it was not included in the final pipeline. This was explained in section 5.
+* Another future work will be to implement a low pass filter as well as other techniques such as a gaussian blur to suppress noise and outliers
