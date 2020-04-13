@@ -61,15 +61,24 @@ The pipeline in this section was as follows:
     
 ![](Documentation_images/figure5.JPG)    
     
+#### 4. Apply a perspective transform to rectify binary image ("birds-eye view").
+
+This part of the code has also been implemented in the "./examples/Line Detection Pipeline.ipynb" notebook. 
+
+In this section we follow the below steps:
+
+    * Created a function to draw the coordinates of 4 points on an image. This allows us to 
+        visualize the points we want to select for our perspective transform. 
+
+![](Documentation_images/figure6.JPG)  
+
+    * These 4 source points were used together with 4 destination arbitrary points selected to warp the image into a top-down view as shown below:
+
+![](Documentation_images/figure7.JPG)
+
+    * Of course in the image above we first got the perspective transform matrix as well as the inverse perspective transform matrix. Later we use the inverse matrix to provide a way to go back to the original image perspective as shown below:
     
-
-
-
-
-
-
-
-
+![](Documentation_images/figure8.JPG)    
 
 
 
