@@ -27,7 +27,7 @@ The goals / steps of this project are the following:
 
 #### 1. Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 
-The code for this step is contained in the first 5 code cells of the IPython notebook located in "./examples/Line Detection Pipeline.ipynb"
+The code for this step is contained in the first 5 code cells of the IPython notebook located in "./Line Detection Pipeline.ipynb"
 
 To calibrate the camera a chessboard was used. The chessboard had 9 x 6 inner corners, as shown below:
 
@@ -51,7 +51,7 @@ Below you can also find another undistortion image. This time from the camera mo
 
 #### 3. Use color transforms, gradients, to create a thresholded binary image.
 
-This part of the code has also been implemented in the "./examples/Line Detection Pipeline.ipynb" notebook. 
+This part of the code has also been implemented in the "./Line Detection Pipeline.ipynb" notebook. 
 
 The pipeline in this section was as follows:
 
@@ -63,7 +63,7 @@ The pipeline in this section was as follows:
     
 #### 4. Apply a perspective transform to rectify binary image ("birds-eye view").
 
-This part of the code has also been implemented in the "./examples/Line Detection Pipeline.ipynb" notebook. 
+This part of the code has also been implemented in the "./Line Detection Pipeline.ipynb" notebook. 
 
 In this section we follow the below steps:
 
@@ -76,9 +76,44 @@ In this section we follow the below steps:
 
 ![](Documentation_images/figure7.JPG)
 
+Another example but with the thersholded binary image is shown below:
+![](Documentation_images/figure9.JPG)
+
    * Of course in the image above we first got the perspective transform matrix as well as the inverse perspective transform matrix. Later we use the inverse matrix to provide a way to go back to the original image perspective as shown below:
     
 ![](Documentation_images/figure8.JPG)    
+
+#### 5. Detect lane pixels and fit to find the lane boundary.
+
+This part of the code has also been implemented in the "./Line Detection Pipeline.ipynb" notebook. However, a lot of helper functions were used, which are located at "./helpers.py" file  
+
+In this section we follow the below steps:
+
+  * Use histogram peaks technique to identify initial points on the line
+  * We propagate this initial points obtained with the help of the sliding window technique as shown below:
+  ![](Documentation_images/figure10.JPG)
+  * Then we fit the points inside the windows with a polynomial of 2nd order as shown below:
+  ![](Documentation_images/figure11.JPG)
+  * We also implement a function to detect the following frames based on previous polynomial coefficients as shown below:
+  ![](Documentation_images/figure12.JPG)
+  Nevertheless, This last function was not implemented in the final pipeline. It is leaved here for optimizing the algorithm in future work.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
