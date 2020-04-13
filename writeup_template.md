@@ -42,6 +42,25 @@ Then a function was created to get the object points (3D) and the image points (
 
 ![](Documentation_images/figure3.JPG)
 
+Below you can also find another undistortion image. This time from the camera mounted on the car.
+
+![](Documentation_images/figure4.JPG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Pipeline (single images)
 
 #### 1. Provide an example of a distortion-corrected image.
@@ -54,6 +73,8 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
 ![alt text][image3]
+
+
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
